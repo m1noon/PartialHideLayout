@@ -1,0 +1,43 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                tools:context=".MainActivity">
+
+    <!--
+        1. layoutリソースを指定するパターン
+    -->
+    <!--<com.minoon.partialhidelayout.PartialHideLayout-->
+        <!--android:id="@+id/list_view"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--app:phl_footerLayout="@layout/view_expandable_footer"-->
+        <!--app:phl_contentLayout="@layout/view_expandable_content"-->
+        <!--app:phl_duration="300"-->
+        <!--/>-->
+
+    <!--
+        2. 子Viewに追加するパターン
+    -->
+
+    <com.minoon.partialhidelayout.PartialHideLayout
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:phl_duration="300"
+        >
+
+        <include layout="@layout/view_content"/>
+
+        <include layout="@layout/view_footer"/>
+
+    </com.minoon.partialhidelayout.PartialHideLayout>
+
+</RelativeLayout>
